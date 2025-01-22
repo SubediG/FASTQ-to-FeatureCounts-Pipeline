@@ -44,7 +44,7 @@ Strandedness=$(infer_experiment.py -i HISAT2/trimmed.bam -r HISAT2/Homo_sapiens.
 echo "Stradedness: $Strandedness"
 
 #Run alignment with knowledge of strandness from RSeQc
-hisat2 -p 4 --rna-strandness FR -x HISAT2/grch38/genome -U SRR087416/trimmed/trimmed.fastq | samtools sort -o HISAT2/Stran_trimmed.bam
+hisat2 --rna-strandness FR -x HISAT2/grch38/genome -U SRR087416/trimmed/trimmed.fastq | samtools sort -o HISAT2/Stran_trimmed.bam
 echo "Final alignment ran successfully"
 
 #Run feature counts to get the feature counts and the summary
